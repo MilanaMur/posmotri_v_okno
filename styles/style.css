@@ -55,6 +55,8 @@ ol {
   margin: 133px 30px;
 }
 
+/* СЕКЦИЯ С ВИДЕО И ПОИСКОМ */
+
 .result {
   align-self: flex-end;
 }
@@ -70,6 +72,8 @@ ol {
   object-position: center;
   padding-bottom: 16px;
 }
+
+/* ОБЪЕКТЫ ДЛЯ ПОИСКА */
 
 .search-form__fieldset {
   border: none;
@@ -94,26 +98,30 @@ input.search-form__textfield {
 }
 
 .search-form__pseudo-checkbox {
-  /* position: absolute;
-  top: 50%;
-  left: 50%; */
   display: inline-block;
-  /* position: relative; */
+  position: relative;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+  margin-bottom: -3px;
 }
 
-/* .search-form__checkbox[type="checkbox"]:checked
-  + .search-form__pseudo-checkbox {
+.search-form__pseudo-checkbox::before {
+  content: "";
   width: 15px;
   height: 15px;
   background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
-  translate: (-50%, -50%);
-} */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+input.search-form__checkbox[type="checkbox"]:checked
+  + span.search-form__pseudo-checkbox:before {
+  opacity: 1;
+}
 
 .content__details {
   /* max-height: 532px; */
@@ -134,13 +142,13 @@ input.search-form__textfield {
 }
 
 .button {
+  position: relative;
   color: #fff;
   font-size: 18px;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
-  border: transparent;
+  border: 1px solid #fff;
   background-color: transparent;
-  cursor: pointer;
 }
 
 .search-form__submit-button {
@@ -149,10 +157,7 @@ input.search-form__textfield {
   align-self: flex-end;
 }
 
-.search-form__submit-button,
-.more-button {
-  border: 1px solid #fff;
-}
+/* СЕКЦИЯ С КАРТОЧКАМИ */
 
 .title {
   color: #fff;
@@ -191,8 +196,15 @@ input.search-form__textfield {
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
+  padding: 2px;
   text-decoration: none;
   color: #fff;
+}
+
+.content__card-link_current {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .content__video-card-title {
@@ -221,4 +233,61 @@ input.search-form__textfield {
 
 .more-button {
   width: 100%;
+}
+
+/* РАЗЛИЧНЫЕ СТАТУСЫ */
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
+/* .search-form__pseudo-checkbox:active {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+} */
+
+.button:active::before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  inset: 0;
+}
+
+.button:hover,
+.search-form__label-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__textfield:focus,
+.button:focus,
+.content__card-link:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* .search-form__label:focus-visible, */
+.button:focus-visible,
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.content__card-link:active {
+  background-color: rgba(255, 255, 255, 0.3);
 }
