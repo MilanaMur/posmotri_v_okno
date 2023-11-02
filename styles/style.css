@@ -136,12 +136,19 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
+<<<<<<< HEAD
   position: relative;
   /* display: flex; */
   /* width: 19px; */
   /* height: 19px; */
   inline-size: 19px;
   block-size: 19px;
+=======
+  display: inline-block;
+  /* position: relative; */
+  width: 19px;
+  height: 19px;
+>>>>>>> de8b3069faafbe7612661584747c218bcca854b7
   border: 1px solid #fff;
   /* margin-bottom: -3px; */
 }
@@ -153,7 +160,7 @@ ol {
   inline-size: 15px;
   block-size: 15px;
   background-color: #fff;
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -187,7 +194,7 @@ ol {
 }
 
 .button {
-  position: relative;
+  /* position: relative; */
   color: #fff;
   font-size: 18px;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -296,11 +303,21 @@ ol {
   border: 1px solid #fff;
 }
 
+<<<<<<< HEAD
+=======
+/* .search-form__pseudo-checkbox:active::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+} */
+
+>>>>>>> de8b3069faafbe7612661584747c218bcca854b7
 .button:active::before {
   content: "";
   background-color: rgba(255, 255, 255, 0.3);
-  position: absolute;
-  inset: 0;
+  /* position: absolute;
+  inset: 0; */
 }
 
 .button:hover,
