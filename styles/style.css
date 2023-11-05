@@ -219,6 +219,12 @@ ol {
   align-self: flex-end;
 }
 
+.more-button {
+  width: 399px;
+  height: 35px;
+  margin: 2px;
+}
+
 /* СЕКЦИЯ С КАРТОЧКАМИ */
 
 .title {
@@ -310,10 +316,4 @@ ol {
   height: 105px;
   object-fit: cover;
   object-position: center;
-}
-
-.more-button {
-  width: 399px;
-  height: 35px;
-  margin: 2px;
 }
